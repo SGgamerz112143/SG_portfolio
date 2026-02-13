@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial;
+    overflow-x: hidden;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow {
+    font-size: 60px;
+    color: #00ffcc;
+    text-shadow: 0 0 20px #00ffcc;
+}
+
+.cursor {
+    width: 15px;
+    height: 15px;
+    background: #00ffcc;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+}
