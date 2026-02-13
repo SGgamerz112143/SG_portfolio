@@ -1,4 +1,4 @@
-// MAIN CURSOR
+// ===== CURSOR + TRAIL =====
 const cursor = document.querySelector(".cursor");
 
 document.addEventListener("mousemove", (e) => {
@@ -11,21 +11,6 @@ document.addEventListener("mousemove", (e) => {
     createTrail(x, y);
 });
 
-// TYPING EFFECT
-const text = "AI Developer | Game Creator | Gesture Control Enthusiast";
-let i = 0;
-const typing = document.querySelector(".typing");
-
-function type() {
-    if (i < text.length) {
-        typing.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 40);
-    }
-}
-type();
-
-// OPTIMIZED TRAIL
 function createTrail(x, y) {
     const trail = document.createElement("div");
     trail.className = "trail";
@@ -39,7 +24,21 @@ function createTrail(x, y) {
     }, 200);
 }
 
-// 3D TILT EFFECT
+// ===== TYPING EFFECT =====
+const text = "AI Developer | Game Creator | Gesture Control Enthusiast";
+let i = 0;
+const typing = document.querySelector(".typing");
+
+function type() {
+    if (i < text.length) {
+        typing.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 40);
+    }
+}
+type();
+
+// ===== 3D TILT EFFECT =====
 const cards = document.querySelectorAll(".card");
 
 cards.forEach(card => {
@@ -61,3 +60,43 @@ cards.forEach(card => {
         card.style.transform = "rotateX(0) rotateY(0)";
     });
 });
+
+// ===== TERMINAL INTRO =====
+const terminal = document.querySelector(".terminal");
+const terminalText = document.querySelector(".terminal-text");
+const loadingBar = document.querySelector(".loading-bar");
+
+const lines = [
+    "Accessing Blacklist Database...",
+    "Decrypting Player Stats...",
+    "Loading Rap Sheet...",
+    "Police Heat Level: HIGH",
+    "Status: WANTED"
+];
+
+let lineIndex = 0;
+let charIndex = 0;
+
+function typeTerminal() {
+    if (lineIndex < lines.length) {
+        if (charIndex < lines[lineIndex].length) {
+            terminalText.innerHTML += lines[lineIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeTerminal, 30);
+        } else {
+            terminalText.innerHTML += "\n";
+            lineIndex++;
+            charIndex = 0;
+            loadingBar.style.width = (lineIndex * 20) + "%";
+            setTimeout(typeTerminal, 300);
+        }
+    } else {
+        terminalText.innerHTML += "\n";
+        terminalText.innerHTML += "<span class='glitch'>ACCESS GRANTED</span>";
+        setTimeout(() => {
+            terminal.style.display = "none";
+        }, 1500);
+    }
+}
+
+typeTerminal();
