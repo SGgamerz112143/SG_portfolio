@@ -83,6 +83,11 @@ section {
     overflow: hidden;
 }
 
+.terminal-text {
+    font-size: 18px;
+    white-space: pre-wrap;
+}
+
 .terminal::after {
     content: "";
     position: absolute;
