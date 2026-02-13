@@ -100,3 +100,31 @@ function typeTerminal() {
 }
 
 typeTerminal();
+// ===== SKILLS SCROLL ANIMATION =====
+
+const skillsSection = document.querySelector(".skills");
+const progressBars = document.querySelectorAll(".progress");
+
+function showProgress() {
+    progressBars.forEach(bar => {
+        const value = bar.getAttribute("data-width");
+        bar.style.width = value;
+    });
+}
+
+function hideProgress() {
+    progressBars.forEach(bar => {
+        bar.style.width = "0";
+    });
+}
+
+window.addEventListener("scroll", () => {
+    const sectionTop = skillsSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if (sectionTop < screenPosition) {
+        showProgress();
+    } else {
+        hideProgress();
+    }
+});

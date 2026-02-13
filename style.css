@@ -186,3 +186,87 @@ section {
     font-size: 14px;
     color: #aaa;
 }
+/* ===== SKILLS SECTION ===== */
+
+.skills {
+    padding: 100px 10%;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.skills-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.skill {
+    margin: 25px 0;
+    text-align: left;
+}
+
+.skill p {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #222;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: #00ffcc;
+    border-radius: 20px;
+    transition: width 1.5s ease;
+}
+
+/* ===== SKILLS SECTION ===== */
+
+.skills {
+    padding: 100px 10%;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.skills-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.skill {
+    margin: 25px 0;
+    text-align: left;
+}
+
+.skill p {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #222;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: #00ffcc;
+    border-radius: 20px;
+    transition: width 1.5s ease-in-out;
+}
